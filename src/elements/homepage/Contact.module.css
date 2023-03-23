@@ -103,6 +103,10 @@
 }
 
 @media (max-width:600px) {
+    .container{
+        margin-left: 2rem;
+        width: calc(100%-2rem);
+    }
     .links{
         flex-direction: column-reverse;
         align-items: flex-start;

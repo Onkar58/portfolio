@@ -3,9 +3,12 @@ import styles from './About.module.css'
 import illustration from '../assests/images/aboutImg.png'
 
 const About = () => {
-    const hii = ()=>{
+    const hii = () => {
         var name = prompt("Enter Your name: ");
-        alert("Hello "+name);
+        if (name) {
+            alert("Hello " + name);
+        }
+
     }
     return (
         <>
@@ -17,7 +20,7 @@ const About = () => {
                     <button className={styles.hiBtn} onClick={hii}>Say Hi to Me</button>
                 </div>
                 <div className={styles.imgDiv}>
-                    <img src={illustration} alt="img"/>
+                    <img src={illustration} alt="img" />
                 </div>
             </div>
         </>

@@ -22,7 +22,7 @@ const Homepage = () => {
                         <span>a Creator</span>
                     </div>
                     <div className={styles.mainCTA}>
-                        <button className={styles.mainbtn}>About Me</button>
+                        <a href="#about"><button className={styles.mainbtn}>About Me</button></a>
                     </div>
                 </div>
             </div>
