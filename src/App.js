@@ -1,4 +1,4 @@
-import About from "./elements/homepage/about";
+import About from "./elements/homepage/About";
 import Contact from "./elements/homepage/Contact";
 import Homepage from "./elements/homepage/homepage";
 import Projects from "./elements/homepage/projects";
