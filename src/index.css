@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Iceberg&display=swap');
 
+@font-face {
+  font-family: AmsterdamOne;
+  src: url("./elements/assests/fonts/AmsterdamOne.ttf");
+}
+
+:root{
+  /* --background-gradient: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
+  --color1: #fdfbfb;
+  --color2: #ebedee;
+  --scroll-color: #c6e2f0;
+  --background-gradient: linear-gradient(var(--color1) 0%, var(--color2) 100%);
+  --text-color: #000;
+  --text-color-2: #555;
+  --accent-color: #67daf9; 
+  --accent-gradient: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+}
+
 
 body {
   margin: 0;
@@ -8,19 +25,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #191919;
-  color: white;
-  /* height: 100vh; */
-  /* margin-bottom: 100px; */
+  background: var(--background-gradient);
+  color: var(--text-color);
   scroll-behavior: smooth;
-  /* display: flex; */
-  /* align-items: flex-start; */
-  /* justify-content: space-; */
-  /* flex-direction: column; */
 }
 
 body::-webkit-scrollbar{
-  display: none;
+  background: var(--background-gradient) ;
+}
+
+body::-webkit-scrollbar-thumb{
+  background: var(--scroll-color);
 }
 
 code {

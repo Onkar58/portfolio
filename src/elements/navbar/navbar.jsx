@@ -3,48 +3,35 @@ import styles from './navbar.module.css'
 // import {NavLink} from 'react-router-dom'
 import navbarInfo from '../info/navbarInfo'
 import { useState } from 'react'
+import { CiMenuFries } from 'react-icons/ci'
+import { RxCross2 } from 'react-icons/rx'
 
 
 
+function Navbar() {
 
-function Navbar({ url }) {
-
-  const [btnState, setBtnState] = useState(false);
-  const [mystyle, setMyStyle] = useState({
-    display: 'none'
-  })
-  function click1() {
-    setBtnState(btnState => !btnState)
-    if (mystyle.display === 'none') {
-      setMyStyle({
-        display: 'flex',
-      })
-    }
-    else {
-      setMyStyle({
-        display: 'none',
-      })
-    }
-  }
-
-  let arrowToggle = btnState ? ' fa-angle-up' : ' fa-angle-down';
-
-
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
     <>
       <nav className={styles.navbar}>
-        <ul>
-          {navbarInfo.map((currentValue, index) => <li key={currentValue.key}><a key={index} href={currentValue.url}>{currentValue.title}</a></li>)}
+        <div className={styles.logo}>
+          <h1>Onkar58</h1>
+        </div>
+        <ul className={isMenuOpen ? styles.openMenu : ""}>
+          {navbarInfo.map((currentValue, index) =>
+            <li key={index}>
+              <a href={currentValue.url} onClick={() => setIsMenuOpen(false)}>
+                {currentValue.title}
+              </a>
+            </li>
+          )}
         </ul>
-      </nav>
-      <nav className={styles.navbar2}>
-        <h3>HOME</h3>
-        <button className='' onClick={click1}><i className={`fa-solid${arrowToggle}`}></i></button>
-        <ul id="list1" style={mystyle}>
-          {navbarInfo.map((currentValue) => <li><a href={currentValue.url}>{currentValue.title}</a></li>)}
-        </ul>
+
+        <div className={styles.icons} onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          {!isMenuOpen && <CiMenuFries />}
+          {isMenuOpen && <RxCross2 />}
+        </div>
       </nav>
     </>
   )
