@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Iceberg&display=swap');
 
 @font-face {
@@ -5,40 +8,30 @@
   src: url("./elements/assests/fonts/AmsterdamOne.ttf");
 }
 
+@font-face {
+  font-family: AwesomePosem;
+  src: url("./elements/assests/fonts/Awesome\ Possum\ Outline\ Demo.otf");
+}
+
+
 :root{
-  /* --background-gradient: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); */
-  --color1: #fdfbfb;
-  --color2: #ebedee;
-  --scroll-color: #c6e2f0;
-  --background-gradient: linear-gradient(var(--color1) 0%, var(--color2) 100%);
-  --text-color: #000;
-  --text-color-2: #555;
-  --accent-color: #67daf9; 
-  --accent-gradient: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+  /* --background-color: #131313; */
+  --background-color: #131313;
+  --text-color: #fff;
+  --accent-color: none;
 }
 
 
-body {
+body{
+  font-family: Iceberg;
+  /* background: var(--background-color); */
+  /* color: var(--text-color); */
   margin: 0;
-  font-family: "Iceberg", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: var(--background-gradient);
-  color: var(--text-color);
-  scroll-behavior: smooth;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body::-webkit-scrollbar{
-  background: var(--background-gradient) ;
-}
 
-body::-webkit-scrollbar-thumb{
-  background: var(--scroll-color);
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.projects::-webkit-scrollbar{
+  display: none;
 }
