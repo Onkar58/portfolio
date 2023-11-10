@@ -5,8 +5,6 @@ import { HiOutlineDownload } from 'react-icons/hi'
 import profile from './assests/images/Profile.png'
 
 const Banner = ({ darkTheme }) => {
-    const width = window.innerWidth
-    // const [width, setWidth] = useState(window.innerWidth)
     const style = {
         'backgroundImage': `url(${darkTheme ? bannerImg : ""})`,
         'backgroundSize': 'cover',

@@ -3,7 +3,7 @@ import Banner from './Banner'
 import About from './About'
 import Skills from './Skills'
 import Projects from './Projects'
-import Contact from './Contact'
+// import Contact from './Contact'
 
 const Contents = ({darkTheme}) => {
   return (
