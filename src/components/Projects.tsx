@@ -8,7 +8,7 @@ export type ProjectsProps = {};
 
 const projects = [
   {
-    id: 1,
+    id: "litgit",
     title: "LitGit",
     category: "Education Platform",
     description:
@@ -19,7 +19,7 @@ const projects = [
     span: { desktop: "col-span-1 row-span-1", mobile: "col-span-1" },
   },
   {
-    id: 2,
+    id: "animhub",
     title: "AnimHub",
     category: "Creative Tool",
     description:
@@ -30,7 +30,7 @@ const projects = [
     span: { desktop: "col-span-1 row-span-2", mobile: "col-span-1" },
   },
   {
-    id: 3,
+    id: "webrtc",
     title: "Video Calling App",
     category: "Communication Tool",
     description:
@@ -41,8 +41,8 @@ const projects = [
     span: { desktop: "col-span-1 row-span-1", mobile: "col-span-1" },
   },
   {
-    id: 4,
-    title: "Predator",
+    id: "predators",
+    title: "Team Predators Racing",
     category: "Web Application",
     description: "Official Web Application for the DYPCO Three JS",
     tech: ["React", "Three.js", "Animation"],

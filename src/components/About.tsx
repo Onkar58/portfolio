@@ -32,15 +32,14 @@ export const About: FC<AboutProps> = () => {
                 experiences.
               </p>
               <p>
-                With a background in Engineering and experience as a Web Lead at
-                Google Developer Student Clubs, I've developed a strong
+                With a background in Engineering I've developed a strong
                 foundation in both frontend and backend technologies.
               </p>
               <p>
                 I enjoy tackling complex problems and transforming ideas into
                 reality through clean code and thoughtful design. When I'm not
-                coding, you can find me exploring new technologies, contributing
-                to open-source projects, or sketching UI designs.
+                coding, you can find me exploring new technologies, learning
+                system designs, or sketching UI designs.
               </p>
             </div>
           </BentoBox>
@@ -58,7 +57,7 @@ export const About: FC<AboutProps> = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">
-                      Exploring 3D web experiences with Three.js
+                      Learning cloud technologies such as AWS
                     </p>
                   </div>
                 </li>
@@ -68,7 +67,8 @@ export const About: FC<AboutProps> = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">
-                      Building modern UI components with React and Tailwind
+                      Building modern UI components with Next, React and
+                      Tailwind
                     </p>
                   </div>
                 </li>
@@ -78,7 +78,8 @@ export const About: FC<AboutProps> = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">
-                      Learning advanced animation techniques
+                      Learning advanced animation techniques and exploring the
+                      3D world
                     </p>
                   </div>
                 </li>
@@ -86,7 +87,7 @@ export const About: FC<AboutProps> = () => {
             </div>
             <Button size="sm" className="mt-4" asChild>
               <Link
-                href="/resume.pdf"
+                href="https://docs.google.com/document/d/1B2-4eBMuFt6Wups-9uxc3WYCz8bPRSQNhkPvT6dOImU/export?format=pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -119,14 +120,9 @@ export const About: FC<AboutProps> = () => {
               <div>
                 <p className="font-medium">B.E. in Computer Engineering</p>
                 <p className="text-sm text-muted-foreground">
-                  4th Year Engineering Student
+                  Final Year Engineering Student
                 </p>
                 <p className="text-sm text-muted-foreground">2021 - 2025</p>
-              </div>
-              <div>
-                <p className="font-medium">Google Developer Student Clubs</p>
-                <p className="text-sm text-muted-foreground">Web Lead</p>
-                <p className="text-sm text-muted-foreground">2023 - 2024</p>
               </div>
             </div>
           </BentoBox>

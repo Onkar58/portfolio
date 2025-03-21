@@ -1,37 +1,37 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { motion } from "framer-motion"
-import { ArrowUpRight, ExternalLink, Github } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import BentoBox from "@/components/bento-box"
-import { useMobile } from "@/hooks/use-mobile"
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import BentoBox from "@/components/bento-box";
+import { useMobile } from "@/hooks/use-mobile";
 
 interface Project {
-  id: number
-  title: string
-  category: string
-  description: string
-  tech: string[]
-  image: string
-  color: string
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  tech: string[];
+  image: string;
+  color: string;
   span: {
-    desktop: string
-    mobile: string
-  }
+    desktop: string;
+    mobile: string;
+  };
 }
 
 interface ProjectBentoProps {
-  projects: Project[]
+  projects: Project[];
 }
 
 export default function ProjectBento({ projects }: ProjectBentoProps) {
-  const isMobile = useMobile()
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null)
+  const isMobile = useMobile();
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6">
@@ -77,16 +77,23 @@ export default function ProjectBento({ projects }: ProjectBentoProps) {
 
             <div className="flex-1 p-5">
               <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-              <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{project.description}</p>
+              <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                {project.description}
+              </p>
 
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.slice(0, 3).map((tech, index) => (
-                  <span key={index} className="text-xs px-2 py-1 rounded-full bg-muted/70">
+                  <span
+                    key={index}
+                    className="text-xs px-2 py-1 rounded-full bg-muted/70"
+                  >
                     {tech}
                   </span>
                 ))}
                 {project.tech.length > 3 && (
-                  <span className="text-xs px-2 py-1 rounded-full bg-muted/70">+{project.tech.length - 3} more</span>
+                  <span className="text-xs px-2 py-1 rounded-full bg-muted/70">
+                    +{project.tech.length - 3} more
+                  </span>
                 )}
               </div>
 
@@ -129,6 +136,5 @@ export default function ProjectBento({ projects }: ProjectBentoProps) {
         </Button>
       </BentoBox>
     </div>
-  )
+  );
 }
-

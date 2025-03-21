@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { ArrowRight, Download, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "./ui/button";
@@ -63,9 +63,12 @@ export const Navbar: React.FC = () => {
         {/* Resume Button (Desktop) */}
         <Button
           size="sm"
-          className="hidden md:flex rounded-lg shadow-md hover:shadow-white transition-all duration-300"
+          className="hidden md:flex rounded-lg shadow-md  transition-all duration-300"
+          asChild
         >
-          Resume <ArrowRight className="ml-2 h-4 w-4" />
+          <Link href="https://docs.google.com/document/d/1B2-4eBMuFt6Wups-9uxc3WYCz8bPRSQNhkPvT6dOImU/export?format=pdf">
+            Resume <Download className="ml-2 h-4 w-4" />
+          </Link>
         </Button>
 
         {/* Mobile Menu Button */}
