@@ -84,7 +84,7 @@ export const About: FC<AboutProps> = () => {
                 </li>
               </ul>
             </div>
-            <Button variant="outline" size="sm" className="mt-4" asChild>
+            <Button size="sm" className="mt-4" asChild>
               <Link
                 href="/resume.pdf"
                 target="_blank"

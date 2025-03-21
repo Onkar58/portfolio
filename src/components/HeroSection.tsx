@@ -59,6 +59,7 @@ export const HeroSection: FC<HeroSectionProps> = () => {
     <section
       ref={heroRef}
       className="relative min-h-screen pt-24 pb-12 px-4 md:px-6 overflow-hidden"
+      id="/"
     >
       <motion.div
         style={{ opacity, y }}
