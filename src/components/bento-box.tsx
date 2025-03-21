@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import type { ReactNode } from "react"
-import { motion } from "framer-motion"
-import { cn } from "@/lib/utils"
+import type { ReactNode } from "react";
+import { HTMLMotionProps, motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
-interface BentoBoxProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: ReactNode
-  className?: string
-  gradient?: string
-  border?: string
-  translateX?: number
-  translateY?: number
-  delay?: number
+interface BentoBoxProps extends HTMLMotionProps<"div"> {
+  children: ReactNode;
+  className?: string;
+  gradient?: string;
+  border?: string;
+  translateX?: number;
+  translateY?: number;
+  delay?: number;
 }
 
 export default function BentoBox({
@@ -47,6 +47,5 @@ export default function BentoBox({
     >
       {children}
     </motion.div>
-  )
+  );
 }
-

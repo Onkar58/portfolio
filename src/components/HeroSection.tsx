@@ -12,7 +12,7 @@ import {
   Twitter,
 } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 import BentoBox from "@/components/bento-box";
 import { Button } from "@/components/ui/button";
@@ -26,35 +26,35 @@ export const HeroSection: FC<HeroSectionProps> = () => {
     target: heroRef,
     offset: ["start start", "end start"],
   });
-  const [size, setSize] = useState<
-    Record<"innerWidth" | "innerHeight", number>
-  >({ innerHeight: 0, innerWidth: 0 });
+  // const [size, setSize] = useState<
+  //   Record<"innerWidth" | "innerHeight", number>
+  // >({ innerHeight: 0, innerWidth: 0 });
 
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener("mousemove", updateMousePosition);
-    setSize({ innerWidth: window.innerWidth, innerHeight: window.innerHeight });
-
-    return () => {
-      window.removeEventListener("mousemove", updateMousePosition);
-    };
-  }, []);
-  const getMouseOffset = (x: number, y: number): { x: number; y: number } => {
-    return {
-      x: (x - size.innerWidth / 2) / 50,
-      y: (y - size.innerHeight / 2) / 50,
-    };
-  };
-
-  const mouseOffset = getMouseOffset(mousePosition.x, mousePosition.y);
+  // const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  //
+  // useEffect(() => {
+  //   const updateMousePosition = (e: MouseEvent) => {
+  //     setMousePosition({ x: e.clientX, y: e.clientY });
+  //   };
+  //
+  //   window.addEventListener("mousemove", updateMousePosition);
+  //   setSize({ innerWidth: window.innerWidth, innerHeight: window.innerHeight });
+  //
+  //   return () => {
+  //     window.removeEventListener("mousemove", updateMousePosition);
+  //   };
+  // }, []);
+  // const getMouseOffset = (x: number, y: number): { x: number; y: number } => {
+  //   return {
+  //     x: (x - size.innerWidth / 2) / 50,
+  //     y: (y - size.innerHeight / 2) / 50,
+  //   };
+  // };
+  //
+  // const mouseOffset = getMouseOffset(mousePosition.x, mousePosition.y);
   return (
     <section
       ref={heroRef}

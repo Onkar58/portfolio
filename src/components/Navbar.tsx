@@ -1,8 +1,7 @@
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { FC } from "react";
-import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
-import { ArrowRight } from "lucide-react";
 
 export type NavbarProps = {};
 

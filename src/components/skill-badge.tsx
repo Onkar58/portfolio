@@ -6,14 +6,14 @@ import { cn } from "@/lib/utils";
 
 interface SkillBadgeProps {
   skill: {
-    name: string;
-    Icon: IconType;
-    category: string;
+    name?: string;
+    Icon?: IconType;
+    category?: string;
   };
 }
 
 export default function SkillBadge({ skill }: SkillBadgeProps) {
-  const getCategoryColor = (category: string) => {
+  const getCategoryColor = (category?: string) => {
     switch (category) {
       case "frontend":
         return "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300";
@@ -37,10 +37,10 @@ export default function SkillBadge({ skill }: SkillBadgeProps) {
       whileHover={{ y: -3 }}
       className={cn(
         "px-3 py-1.5 rounded-full font-medium text-xs flex items-center gap-2",
-        getCategoryColor(skill.category),
+        getCategoryColor(skill?.category),
       )}
     >
-      <span className="relative w-3 h-3">{<skill.Icon />}</span>
+      <span className="relative w-3 h-3">{skill?.Icon && <skill.Icon />}</span>
       {skill.name}
     </motion.div>
   );
