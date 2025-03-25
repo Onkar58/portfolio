@@ -1,0 +1,115 @@
+{
+  "animhub": {
+    "title": "Animhub",
+    "description": "An online platform for users to create and share animating components using HTML, CSS and JS",
+    "longDescription": "This project was developed keeping in mind a platform for users to create animating components, see their live preview, share with people, follow each other on the platform. Basically is is the social media for animating components",
+    "image": "/animhub.png",
+    "technologies": [
+      "React",
+      "Javascript",
+      "Module CSS",
+      "Monaco Editor",
+      "Firebase"
+    ],
+    "liveUrl": "https://anim-hub.vercel.app",
+    "githubUrl": "https://github.com/Pixel-Perfect-Tales/AnimHub",
+    "completedDate": "October 2023",
+    "role": "Full Stack Developer",
+    "keyFeatures": [
+      "User authentication and account management",
+      "Code Editor and live Preview",
+      "Share the code with others",
+      "Follow and like each others components"
+    ],
+    "challenges": [
+      "Implementing the live preview feature",
+      "Storing the user code into the database and retrieving it ",
+      "Creating a responsive design for all devices"
+    ]
+  },
+  "litgit": {
+    "title": "Litgit",
+    "description": "An platform for teachers to see, track and analyse their student's leetcode profile",
+    "longDescription": "Litgit is a solution for the teachers who wanted to track and analyse their student's leetcode profiles. As a college project we delivered a dashboard for the teachers that will fetch the publicaly available data of their students, display the stats, compare various students and create leaderboards",
+    "image": "/litgit.png",
+    "technologies": [
+      "React",
+      "MongoDB",
+      "TailwindCSS",
+      "Nodejs",
+      "Express",
+      "GraphQL",
+      "Leetcode"
+    ],
+    "liveUrl": "https://litgit.vercel.app",
+    "githubUrl": "https://github.com/Onkar58/in-house-frontend/",
+    "completedDate": "April 2024 ",
+    "role": "Full Stack Developer",
+    "keyFeatures": [
+      "User authentication and dashboard management",
+      "Leetcode public data",
+      "Dashboard to compare students",
+      "Leaderboard ranking based on students profiles",
+      "Analysis of the students in the batch"
+    ],
+    "challenges": [
+      "Finding the correct leetcode API endpoints",
+      "Calling the graphql queries",
+      "Maintaining the students data in the TG batch",
+      "Creating dashboard elements with limited data"
+    ],
+    "testimonial": {
+      "quote": "This helped us to keep a track of the students in our batch. Good project solving the teachers problems",
+      "author": "Mrs. Pallavi Singade",
+      "company": "DYPCOE (AI & DS)"
+    }
+  },
+  "webrtc": {
+    "title": "Phone-a-friend",
+    "description": "A simple video calling app using WebRTC",
+    "longDescription": "This was a mvp of a simple video calling app that uses WebRTC to establish a connection between 2 peers and then they can communicate without the need of a server",
+    "image": "/webrtc.png",
+    "technologies": ["HTML", "Javascript", "WebRTC"],
+    "liveUrl": "https://onkar58.github.io/webRTC/",
+    "githubUrl": "https://github.com/Onkar58/webRTC",
+    "completedDate": "November 2024",
+    "role": "Developer",
+    "keyFeatures": [
+      "Link generation for the video call",
+      "Establishing communication without the use of a server",
+      "Simple UI ",
+      "Updates such as friend joined, and friend left"
+    ],
+    "challenges": [
+      "Using the WebRTC technology",
+      "Understanding about ICE-Candidates STUN/TURN servers etc",
+      "Passing the information to the other user without the use of server"
+    ]
+  },
+  "predators": {
+    "title": "Team Predators Racing",
+    "description": "Online showcase for the Team Predators Racing club of DYPCOE",
+    "longDescription": "",
+    "image": "/predators.png",
+    "technologies": [
+      "React",
+      "Javascript",
+      "Module CSS",
+      "ThreeJS",
+      "Firebase"
+    ],
+    "liveUrl": "https://team-predators-racing.web.app/",
+    "githubUrl": "https://github.com/Onkar58/Team_Predators",
+    "completedDate": "January 2024",
+    "role": "Full Stack Developer",
+    "keyFeatures": [
+      "3D model for the vehicles",
+      "Animations for the teams page"
+    ],
+    "challenges": [
+      "Using the 3D model in the website",
+      "Optimizing image, models loading for performance",
+      "Creating a responsive design for all devices"
+    ]
+  }
+}

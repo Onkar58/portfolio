@@ -23,6 +23,7 @@ interface Project {
     desktop: string;
     mobile: string;
   };
+  link: string;
 }
 
 interface ProjectBentoProps {
@@ -71,7 +72,13 @@ export default function ProjectBento({ projects }: ProjectBentoProps) {
                 className="h-10 w-10 rounded-full absolute top-4 right-4 flex items-center justify-center"
                 style={{ backgroundColor: project.color }}
               >
-                <ArrowUpRight className="h-5 w-5 text-white" />
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ArrowUpRight className="h-5 w-5 text-white" />
+                </Link>
               </motion.div>
             </div>
 
@@ -126,7 +133,7 @@ export default function ProjectBento({ projects }: ProjectBentoProps) {
         </p>
         <Button variant="outline" size="sm" asChild>
           <Link
-            href="https://github.com/onkarwaghmode"
+            href="https://github.com/onkar58"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2"

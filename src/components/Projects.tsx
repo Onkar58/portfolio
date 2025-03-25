@@ -17,6 +17,7 @@ const projects = [
     image: "/litgit.png",
     color: "#6366f1",
     span: { desktop: "col-span-1 row-span-1", mobile: "col-span-1" },
+    link: "https://litgit.vercel.app",
   },
   {
     id: "animhub",
@@ -28,6 +29,7 @@ const projects = [
     image: "/animhub.png",
     color: "#f59e0b",
     span: { desktop: "col-span-1 row-span-2", mobile: "col-span-1" },
+    link: "https://anim-hub.vercel.app",
   },
   {
     id: "webrtc",
@@ -39,6 +41,7 @@ const projects = [
     image: "/webrtc.png",
     color: "#10b981",
     span: { desktop: "col-span-1 row-span-1", mobile: "col-span-1" },
+    link: "https://onkar58.github.io/webrtc",
   },
   {
     id: "predators",
@@ -49,6 +52,7 @@ const projects = [
     image: "/predators.png",
     color: "#ef4444",
     span: { desktop: "col-span-2 row-span-1", mobile: "col-span-1" },
+    link: "https://team-predators-racing.web.app/",
   },
 ];
 
@@ -71,7 +75,7 @@ export const Projects: FC<ProjectsProps> = () => {
         <div className="mt-12 text-center">
           <Button size="lg" variant="outline" asChild>
             <Link
-              href="https://github.com/onkarwaghmode"
+              href="https://github.com/onkar58"
               target="_blank"
               rel="noopener noreferrer"
             >
