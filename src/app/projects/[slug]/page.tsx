@@ -1,20 +1,20 @@
-import Image from "next/image";
-import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import projects from "@/data/projects.json";
 import {
   ArrowLeft,
+  Award,
+  Calendar,
+  Code,
   ExternalLink,
   Github,
-  Calendar,
-  User,
-  Code,
-  Award,
-  Lightbulb,
   Layers,
+  Lightbulb,
+  User,
 } from "lucide-react";
-import projects from "@/data/projects.json";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Image from "next/image";
+import Link from "next/link";
 type Testimonial = {
   quote: string;
   author: string;
@@ -40,8 +40,13 @@ const getProjectData = (slug: string) => {
   return projects[slug as keyof typeof projects] as Project;
 };
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = getProjectData(params.slug);
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug: _project } = await params;
+  const project = getProjectData(_project as string);
 
   if (!project) {
     return (

@@ -1,10 +1,10 @@
 "use client";
-import { useState, useEffect } from "react";
-import { ArrowRight, Download, Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Download, Menu, X } from "lucide-react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "./ui/button";
+import { useEffect, useState } from "react";
 import Logo from "./Logo";
+import { Button } from "./ui/button";
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +42,7 @@ export const Navbar: React.FC = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-6">
-          {links.map((item, index) => (
+          {links.map((item) => (
             <motion.div
               key={item}
               whileHover={{ scale: 1.1 }}
