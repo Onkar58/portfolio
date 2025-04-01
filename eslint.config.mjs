@@ -15,6 +15,7 @@ const eslintConfig = [
     rules: {
       "@typescript-eslint/no-empty-object-type": "off",
       "react/no-unescaped-entities": "off",
+      "@typescript-eslint/no-require-imports": "off",
     },
   },
 ];

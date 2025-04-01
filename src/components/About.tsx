@@ -118,7 +118,7 @@ export const About: FC<AboutProps> = () => {
             <h3 className="text-xl font-semibold mb-4">Education</h3>
             <div className="space-y-4">
               <div>
-                <p className="font-medium">B.E. in Computer Engineering</p>
+                <p className="font-medium">B.E. in AI & DS</p>
                 <p className="text-sm text-muted-foreground">
                   Final Year Engineering Student
                 </p>

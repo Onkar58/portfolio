@@ -1,12 +1,53 @@
-import { FC } from "react";
-import BentoBox from "./bento-box";
-import { Button } from "./ui/button";
+"use client";
+import Loading from "@/app/loading";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
+import { FC, FormEvent, useCallback, useState } from "react";
+import { toast } from "sonner";
+import BentoBox from "./bento-box";
+import { Button } from "./ui/button";
 
 export type ContactProps = {};
 
+const recipient = "onkarwaghmode58@gmail.com";
+const subject = encodeURIComponent("Request for a Call");
+const body = encodeURIComponent(
+  `Hello,\n\nI would like to schedule a call.\n\nName: \nPreferred Date & Time: \nMeeting Type: (Google Meet / Zoom)\n\nLooking forward to your response.\n\nBest regards,\n`,
+);
+
 export const Contact: FC<ContactProps> = () => {
+  const [isLoading, setLoading] = useState<boolean>(false);
+  const handleSubmit = useCallback(async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    console.log("Submitting");
+    const data = new FormData();
+    Array.from(e.target as HTMLFormElement).forEach((element) => {
+      if (
+        element instanceof HTMLInputElement ||
+        element instanceof HTMLSelectElement ||
+        element instanceof HTMLTextAreaElement
+      ) {
+        data.set(element.name, element.value);
+      }
+    });
+    const response = await fetch("/api/contact/", {
+      method: "POST",
+      body: data,
+    });
+    setLoading(false);
+    if (response.status === 500) {
+      toast.error("Something went wrong", {
+        duration: 3000,
+      });
+
+      return;
+    }
+
+    toast("Message sent", {
+      duration: 3000,
+    });
+  }, []);
   return (
     <section id="contact" className="py-20 md:py-32">
       <div className="container px-4 md:px-6 max-w-6xl mx-auto">
@@ -26,7 +67,7 @@ export const Contact: FC<ContactProps> = () => {
             gradient="from-primary/10 to-background"
           >
             <h3 className="text-xl font-semibold mb-6">Send Me a Message</h3>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">
@@ -35,6 +76,7 @@ export const Contact: FC<ContactProps> = () => {
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     className="w-full px-3 py-2 border border-border rounded-md bg-background"
                     placeholder="Your name"
                   />
@@ -45,6 +87,7 @@ export const Contact: FC<ContactProps> = () => {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     id="email"
                     className="w-full px-3 py-2 border border-border rounded-md bg-background"
                     placeholder="Your email"
@@ -58,6 +101,7 @@ export const Contact: FC<ContactProps> = () => {
                 <input
                   type="text"
                   id="subject"
+                  name="subject"
                   className="w-full px-3 py-2 border border-border rounded-md bg-background"
                   placeholder="Subject"
                 />
@@ -69,12 +113,13 @@ export const Contact: FC<ContactProps> = () => {
                 <textarea
                   id="message"
                   rows={4}
+                  name="message"
                   className="w-full px-3 py-2 border border-border rounded-md bg-background"
                   placeholder="Your message"
                 ></textarea>
               </div>
-              <Button type="submit" className="w-full">
-                Send Message
+              <Button disabled={isLoading} type="submit" className="w-full">
+                {!isLoading ? "Send" : <Loading />}
               </Button>
             </form>
           </BentoBox>
@@ -139,7 +184,10 @@ export const Contact: FC<ContactProps> = () => {
                 discuss how I can help bring your ideas to life.
               </p>
               <Button variant="outline" size="sm" asChild>
-                <Link href="#" className="w-full justify-center">
+                <Link
+                  href={`mailto:${recipient}?subject=${subject}&body=${body}`}
+                  className="w-full justify-center"
+                >
                   Schedule a Call
                 </Link>
               </Button>
