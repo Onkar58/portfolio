@@ -13,9 +13,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body>{children}
-      <Toaster />
+    <html
+      lang="en"
+      className="dark selection:bg-[#dee2e6]  selection:text-black"
+    >
+      <body>
+        {children}
+        <Toaster />
       </body>
     </html>
   );
