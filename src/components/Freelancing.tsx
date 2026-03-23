@@ -1,20 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import BentoBox from "@/components/bento-box";
+import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Zap,
   Award,
-  Users,
-  Mail,
   ExternalLink,
   Github,
+  Mail,
+  Users,
+  Zap,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
-import BentoBox from "@/components/bento-box";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useState } from "react";
 
 interface FreelanceProject {
   id: number;
@@ -36,7 +35,7 @@ interface ClientBadge {
 }
 
 export function Freelancing() {
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+  const [, setHoveredProject] = useState<number | null>(null);
 
   const projects: FreelanceProject[] = [
     {

@@ -14,7 +14,6 @@ import {
   SiGithub,
   SiJavascript,
   SiJest,
-  SiJsr,
   SiMongodb,
   SiMysql,
   SiNetlify,
