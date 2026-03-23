@@ -120,9 +120,9 @@ export const About: FC<AboutProps> = () => {
               <div>
                 <p className="font-medium">B.E. in AI & DS</p>
                 <p className="text-sm text-muted-foreground">
-                  Final Year Engineering Student
+                  Software Engineer
                 </p>
-                <p className="text-sm text-muted-foreground">2021 - 2025</p>
+                <p className="text-sm text-muted-foreground">2025 Passout</p>
               </div>
             </div>
           </BentoBox>
