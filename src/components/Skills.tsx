@@ -1,7 +1,9 @@
 import { FC } from "react";
 import {
   SiBlender,
+  SiC,
   SiCanva,
+  SiCplusplus,
   SiDjango,
   SiDocker,
   SiExpress,
@@ -10,6 +12,7 @@ import {
   SiFlask,
   SiGit,
   SiGithub,
+  SiJavascript,
   SiJest,
   SiMongodb,
   SiMysql,
@@ -18,6 +21,8 @@ import {
   SiNodedotjs,
   SiPython,
   SiReact,
+  SiRedis,
+  SiSpringboot,
   SiTailwindcss,
   SiThreedotjs,
   SiTypescript,
@@ -28,7 +33,7 @@ import {
 import BentoBox from "./bento-box";
 import SkillBadge from "./skill-badge";
 
-import { BiLogoAws } from "react-icons/bi";
+import { BiLogoAws, BiLogoJava } from "react-icons/bi";
 
 export type SkillsProps = {};
 
@@ -37,18 +42,23 @@ const skills = [
   { name: "Tailwind CSS", Icon: SiTailwindcss, category: "frontend" },
   { name: "NextJs", Icon: SiNextdotjs, category: "frontend" },
   { name: "Three.js", Icon: SiThreedotjs, category: "frontend" },
-  { name: "TypeScript", Icon: SiTypescript, category: "frontend" },
   { name: "Node.js", Icon: SiNodedotjs, category: "backend" },
   { name: "Express", Icon: SiExpress, category: "backend" },
-  { name: "Firebase", Icon: SiFirebase, category: "backend" },
-  { name: "MongoDB", Icon: SiMongodb, category: "backend" },
-  { name: "MySQL", Icon: SiMysql, category: "backend" },
+  { name: "Springboot", Icon: SiSpringboot, category: "backend" },
   { name: "Django", Icon: SiDjango, category: "backend" },
   { name: "Flask", Icon: SiFlask, category: "backend" },
-  { name: "Python", Icon: SiPython, category: "backend" },
+  { name: "Firebase", Icon: SiFirebase, category: "backend" },
+  { name: "MySQL", Icon: SiMysql, category: "backend" },
+  { name: "MongoDB", Icon: SiMongodb, category: "backend" },
+  { name: "Redis", Icon: SiRedis, category: "backend" },
   { name: "WebRTC", Icon: SiWebrtc, category: "media" },
   { name: "Blender", Icon: SiBlender, category: "media" },
-  {},
+  { name: "JavaScript", Icon: SiJavascript, category: "language" },
+  { name: "Java", Icon: BiLogoJava, category: "language" },
+  { name: "TypeScript", Icon: SiTypescript, category: "language" },
+  { name: "Python", Icon: SiPython, category: "language" },
+  { name: "C++", Icon: SiCplusplus, category: "language" },
+  { name: "C", Icon: SiC, category: "language" },
 ];
 
 export const Skills: FC<SkillsProps> = () => {
@@ -62,7 +72,7 @@ export const Skills: FC<SkillsProps> = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
           <BentoBox className="col-span-1 row-span-1 p-6" border="border-muted">
             <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
               <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400 flex items-center justify-center">
@@ -114,8 +124,24 @@ export const Skills: FC<SkillsProps> = () => {
             </div>
           </BentoBox>
 
+          <BentoBox className="col-span-1 row-span-1 p-6" border="border-muted">
+            <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+              <span className="w-6 h-6 rounded-full bg-purple-100 text-red-600 dark:bg-red-900/30 dark:text-red-400 flex items-center justify-center">
+                <span className="text-xs">LA</span>
+              </span>
+              Languages
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {skills
+                .filter((skill) => skill.category === "language")
+                .map((skill) => (
+                  <SkillBadge key={skill.name} skill={skill} />
+                ))}
+            </div>
+          </BentoBox>
+
           <BentoBox
-            className="col-span-1 md:col-span-3 row-span-1 p-6"
+            className="col-span-1 md:col-span-4 row-span-1 p-6"
             gradient="from-primary/10 via-background to-background"
           >
             <h3 className="text-xl font-semibold mb-4">Tools & Workflow</h3>
